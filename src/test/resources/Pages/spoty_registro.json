@@ -1,0 +1,41 @@
+{
+  "Email": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='email']"
+  },
+  "Confirmacion_Email": {
+    "GetFieldBy": "id",
+    "ValueToFind": "confirm"
+  },
+  "Titulo": {
+    "GetFieldBy": "cssSelector",
+    "ValueToFind": ".Type__TypeElement-goli3j-0.hvmNPy.Header__Title-nt28l4-1.fKQPLB"
+  },
+  "Mes de nacimiento": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//select[@id='month']"
+  },
+  "Email error": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@class='LinkContainer-sc-1t58wcv-0 hngMxV']"
+  },
+  "Male": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//label[@for='gender_option_male']"
+  },
+  "Female": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//label[@for='gender_option_female']"
+  },
+  "NoBinary": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//label[@for='gender_option_nonbinary']"
+  },
+  "Marketing": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//label[@for='marketing-opt-checkbox']"
+  }
+
+
+}
+

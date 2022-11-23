@@ -1,0 +1,35 @@
+{
+  "Frame1": {
+    "GetFieldBy": "id",
+    "ValueToFind": "frame1"
+  },
+  "Frame2": {
+    "GetFieldBy": "id",
+    "ValueToFind": "frame2"
+  },
+  "Frame3": {
+    "GetFieldBy": "id",
+    "ValueToFind": "frame3"
+  },
+  "Frame1 input": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//body//input"
+  },
+  "Frame2 select": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//select[@id='animals']"
+  },
+  "Frame3 checkbox": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='a']"
+  },
+  "FrameAlerta": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//iframe[@id='iframeResult']"
+  },
+  "BotonAlerta": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//button[@onclick='myFunction()']"
+  }
+}
+

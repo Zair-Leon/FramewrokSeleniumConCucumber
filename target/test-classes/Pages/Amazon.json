@@ -1,0 +1,15 @@
+{
+  "Mi Cuenta": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[normalize-space()='Mi cuenta']"
+  },
+  "Mis Pedidos": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//div[@data-card-identifier='YourOrders']//div[@class='a-box-inner']"
+  },
+  "Sobre Amazon": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[normalize-space()='Sobre Amazon.es']"
+  }
+}
+
