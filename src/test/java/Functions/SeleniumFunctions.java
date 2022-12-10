@@ -9,6 +9,7 @@ import org.apache.log4j.Logger;
 import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,13 +18,13 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
 
 public class SeleniumFunctions {
 
@@ -118,6 +119,11 @@ public class SeleniumFunctions {
         }
     }
 
+    /**
+     * MIRAR BIEN LA FUNCIONALIDAD
+     * @param parameter
+     * @throws IOException
+     */
     public void RetriveTestData (String parameter) throws IOException{
         Environment = readProperties("Environment");
         try {
@@ -127,6 +133,12 @@ public class SeleniumFunctions {
         }
     }
 
+    /**
+     * MIRAR BIEN LA FUNCIONALIDAD
+     * @param element
+     * @param key
+     * @throws Exception
+     */
     public void iSetElementWithKeyValue(String element, String key) throws Exception{
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
         boolean exist = this.ScenaryData.containsKey(key);
@@ -140,6 +152,12 @@ public class SeleniumFunctions {
         }
     }
 
+    /**
+     * Función que realiza la selección de una opción de una lista, ingresando el texto de la opción.
+     * @param option Parámetro que define el nombre de la opción de la lista.
+     * @param element Parámetro que define el elemento tipo lista.
+     * @throws Exception
+     */
     public void selectOptionDropdownByText(String option, String element) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
@@ -151,6 +169,12 @@ public class SeleniumFunctions {
 
     }
 
+    /**
+     * Función que realiza la busqueda de un elemento tipo Select
+     * @param element Parámetro que define el elemento tipo Select
+     * @return Retorna un valor Select
+     * @throws Exception
+     */
     public Select selectOption(String element) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
@@ -159,16 +183,24 @@ public class SeleniumFunctions {
         return opt;
     }
 
-
+    /**
+     * Función que valida que un elemento este presente en la pantalla.
+     * @param element Parámetro que define el elemento a validar.
+     * @throws Exception
+     */
     public void waitForElementPresent(String element) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
         log.info("Waiting for the element: "+element+" to be present");
         wait.until(ExpectedConditions.presenceOfElementLocated(SeleniumElement));
     }
 
-
+    /**
+     * Función que valida que un elemento este visible en la pantalla.
+     * @param element Parámetro que define el elemento a validar.
+     * @throws Exception
+     */
     public void waitForElementVisible(String element) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
@@ -177,7 +209,11 @@ public class SeleniumFunctions {
         wait.until(ExpectedConditions.visibilityOfElementLocated(SeleniumElement));
     }
 
-
+    /**
+     * Función que valida que un elemento de la pantalla sea clickable.
+     * @param element Parámetro que define el elemento a validar.
+     * @throws Exception
+     */
     public void waitForElementClic(String element) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
@@ -186,7 +222,12 @@ public class SeleniumFunctions {
         wait.until(ExpectedConditions.elementToBeClickable(SeleniumElement));
     }
 
-
+    /**
+     * Función que valida si un mensaje se despliega
+     * @param element Parámetro que define el elemento donde se desplegará el mensaje
+     * @return Retorna un valor booleano <b>|true o false|</b>
+     * @throws Exception
+     */
     public boolean isElementDisplayed(String element) throws Exception{
         boolean isDisplayed = true;
         try {
@@ -202,7 +243,11 @@ public class SeleniumFunctions {
         return isDisplayed;
     }
 
-
+    /**
+     * Función que realiza un SwitchTo a un frame seleccionado por el usuario.
+     * @param Frame Parámetro que define el frame al que se le hará un SwitchTo.
+     * @throws Exception
+     */
     public void switchToFrame(String Frame) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(Frame);
@@ -210,11 +255,19 @@ public class SeleniumFunctions {
         driver.switchTo().frame(driver.findElement(SeleniumElement));
     }
 
+    /**
+     * Función que realiza un SwitchTo al frame "Padre"
+     */
     public void switchToParentFrame(){
         log.info("Switching to parent frame: ");
         driver.switchTo().parentFrame();
     }
 
+    /**
+     * Función que realiza la marcación de un checkbutton.
+     * @param element Parámetro que define el elemento (Checkbutton) a marcar.
+     * @throws Exception
+     */
     public void checkCheckBox(String element) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
@@ -225,6 +278,11 @@ public class SeleniumFunctions {
         }
     }
 
+    /**
+     * Función que realiza la desmarcación de un checkbutton que previamente se haya marcado.
+     * @param element Parámetro que define el elemento (Checkbutton) a desmarcar.
+     * @throws Exception
+     */
     public void UncheckCheckBox(String element) throws Exception{
 
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
@@ -235,6 +293,13 @@ public class SeleniumFunctions {
         }
     }
     //JAVASCRIPT ACTIONS//
+
+    /**
+     * Función que realiza un clic a un elemento a través de un script, sirve para dar clic a un elemento que no está
+     * visible en la pantalla.
+     * @param element Parámetro que define el elemento al que hay que darle clic.
+     * @throws Exception
+     */
     public void ClickJSElement(String element) throws Exception{
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -242,7 +307,11 @@ public class SeleniumFunctions {
         jse.executeScript("arguments[0].click()", driver.findElement(SeleniumElement));
     }
 
-
+    /**
+     *Función que realiza un scroll a un elemento de la pantalla.
+     * @param element Parámetro que define el elemento al cual se realizará el scroll
+     * @throws Exception
+     */
     public void scrollToElement(String element) throws Exception{
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
         JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -251,7 +320,11 @@ public class SeleniumFunctions {
         TimeUnit.SECONDS.sleep(5);
     }
 
-
+    /**
+     * Función que realiza un scroll con las coordenadas de la pantalla, utiliza un script de JavaScript.
+     * @param to Parámetro que define la opción seleccionada para realizar el scroll <b>|top o end|</b>
+     * @throws Exception
+     */
     public void scrollPage(String to) throws Exception{
         JavascriptExecutor jse = (JavascriptExecutor)driver;
         if (to.equals("top")){
@@ -265,6 +338,9 @@ public class SeleniumFunctions {
         }
     }
 
+    /**
+     * Función que valida la pantalla actual y confirma que haya cargado completamente, con un script de JavaScript.
+     */
     public void page_has_loaded(){
         String GetActual = driver.getCurrentUrl();
         System.out.println(String.format("Checking if %s page is loaded.", GetActual));
@@ -273,6 +349,11 @@ public class SeleniumFunctions {
                 webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
     }
 
+    /**
+     * Función que abre una nueva ventana en el navegador.
+     * @param URL Parámetro que define la URL para la nueva ventana.
+     * @throws Exception
+     */
     public void OpenNewTabWithURL(String URL) throws Exception {
         log.info("Open New Tab with URL: " + URL);
         System.out.println("Open new tab with URL: " + URL);
@@ -282,7 +363,11 @@ public class SeleniumFunctions {
 
     }
 
-
+    /**
+     * Función que sirve para navegar en distintas ventanas abiertas por el driver, estableciendo un nombre para cada ventana.
+     * @param WindowsName Parámetro que define el nombre de la ventana en la que este posicionado el driver.
+     * @throws Exception
+     */
     public void WindowsHandle(String WindowsName) throws Exception{
         if (this.HandleMyWindows.containsKey(WindowsName)){
             driver.switchTo().window(this.HandleMyWindows.get(WindowsName));
@@ -299,6 +384,10 @@ public class SeleniumFunctions {
         }
     }
 
+    /**
+     * Función que interactua con las alertas que despliega el navegador, ya sea para aceptar o rechazar la alerta.
+     * @param option Parámetro que define la opción del usuario <b>|Accept o Dismiss|</b>
+     */
     public void AcceptAlert(String option){
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
@@ -309,12 +398,17 @@ public class SeleniumFunctions {
             }else {
                 alert.dismiss();
             }
-            log.info("The alert was accepted successfully");
+            System.out.println("The alert was accepted successfully");
         }catch (Throwable e){
             log.error("Error came while waiting for the alert pop-up "+e.getMessage());
         }
     }
 
+    /**
+     * Función que realiza un ScreenShot de la pantalla en la que este posicionado el driver.
+     * @param TestCaptura Parámetro que define el nombre que se le establecerá a la imagen tomada.
+     * @throws IOException
+     */
     public void ScreenShot(String TestCaptura) throws IOException{
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd-HHmm");
         String screenShotName = readProperties("ScreenShotPath")+"\\"+readProperties("browser") + "\\" + TestCaptura + "_(" + dateFormat.format(GregorianCalendar.getInstance().getTime()) + ")";
@@ -323,7 +417,12 @@ public class SeleniumFunctions {
         FileUtils.copyFile(scrFile, new File(String.format("%s.png", screenShotName)));
     }
 
-
+    /**
+     * Función que obtiene el texto que este contenido en un elemento.
+     * @param element Parámetro que define el elemento a validar.
+     * @return Retorna el String ElementText
+     * @throws Exception
+     */
     public String GetTextElement(String element) throws Exception{
         By SeleniumElement = SeleniumFunctions.getCompleteElement(element);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
@@ -342,7 +441,12 @@ public class SeleniumFunctions {
         Assert.assertFalse("Text is present in element: "+element+" current text is: "+ElementText, isFoundFalse);
     }
 
-
+    /**
+     * Función que valida si el texto de un elemento contiene un texto ingresado por el usuario
+     * @param element Parámetro que define el elemento a comparar.
+     * @param text Parámetro que define el texto a validar parcialmente.
+     * @throws Exception
+     */
     public void checkPartialTextElementPresent(String element, String text) throws Exception{
         ElementText = GetTextElement(element);
 
@@ -350,13 +454,52 @@ public class SeleniumFunctions {
         Assert.assertTrue("Text is present in element: "+element+" current text is: "+ElementText, isFound);
     }
 
+    /**
+     * Función que compara si el texto de un elemento es igual a uno ingresado por el usuario
+     * @param element Parámetro que define el elemento a comparar.
+     * @param text Parámetro que define el texto a comparar.
+     * @throws Exception
+     */
     public void checkTextElementIqualTo(String element, String text) throws Exception{
         ElementText = GetTextElement(element);
 
         Assert.assertEquals("Text is present in element: "+element+" current text is: "+ElementText, text, ElementText);
     }
 
+    /**
+     * Función que realiza el consumo de un servicio REST que este registrado en WS-Guardian
+     * @param servicio El parámetro "servicio" define la URL del servicio a consumir. Ejemplo:
+     *                 <b>"http://192.168.200.210:5080/rest/ServicioREST"</b>
+     * @throws IOException
+     */
+    public void consumeServiceREST(String servicio) throws IOException{
+        //Solicitar petición
+        URL url = new URL(servicio);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.connect();
 
+        //Petición correcta?
+
+        int responseCode = conn.getResponseCode();
+        if (responseCode != 200){
+            throw new RuntimeException("Ocurrio un error "+responseCode);
+        }else {
+            //Abrir un scanner que lea el flujo de datos
+            StringBuilder information = new StringBuilder();
+            Scanner scanner = new Scanner(url.openStream());
+
+            while (scanner.hasNext()){
+                information.append(scanner.nextLine());
+            }
+
+            scanner.close();
+
+            //Pintar la información
+
+            System.out.println(information);
+        }
+    }
 
 
 }
