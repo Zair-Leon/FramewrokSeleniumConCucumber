@@ -1,0 +1,126 @@
+{
+  "Usuario": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idLoginAdForm:idUsLoginTx']"
+  },
+  "Contraseña": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idLoginAdForm:idPassLoginSecret']"
+  },
+  "BotonLogin": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idLoginAdForm:j_id43']"
+  },
+  "Menu-Contactos": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idIndexAdForm:idHeaderAdHtml:Menu:j_id49:j_id50:Contacts:link']"
+  },
+  "Titulo-Contactos": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='form:j_id108']"
+  },
+  "ActivarEdicion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idIndexAdForm:idAddOptionsAdView:idLockAddOptAdLk']"
+  },
+  "ActivarEdicion-BotonAceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idIndexAdForm:idActEditionPopupAdBtn']"
+  },
+  "Crear": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id175']"
+  },
+  "Nombre": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:txtFirstName']"
+  },
+  "Apellido": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:txtLastName']"
+  },
+  "Email": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:txtEmail']"
+  },
+  "Telefono": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:txtPhoneNumber']"
+  },
+  "Organizacion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:txtCompany']"
+  },
+  "TipoContacto": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//select[@id='form:tabSet:0:cmbTypes']"
+  },
+  "BotonGuardar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:btnSave']"
+  },
+  "BotonAceptar-PopUp": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:btnOK']"
+  },
+  "TerminarEdicion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:idAddOptionsAdView:idUnlockAddOptAdLk']"
+  },
+  "TerminarEdicion-Lista": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//select[@id='form:idSelOptPopupAdMenu']"
+  },
+  "TerminarEdicion-BotonAceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:idSavePopupAdBtn']"
+  },
+
+
+
+  "SeleccionarContacto": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//tr[@id='form:resultsTable:1']//td[1]"
+  },
+  "VerDetalles": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id178']"
+  },
+  "Titulo-VerDetalles": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='form:ldblTitle']"
+  },
+  "BotonRegresar-VerDetalles": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:btnBack']"
+  },
+
+
+
+
+  "Editar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id181']"
+  },
+  "BotonGuardar-Editar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:btnSave']"
+  },
+  "BotonAceptar-PopUpEditar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:btnOK']"
+  },
+
+
+
+
+
+
+  "Eliminar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id184']"
+  }
+
+
+}
+

@@ -53,7 +53,7 @@ public class StepDefinitions {
         driver.get(URL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         functions.page_has_loaded();
-        functions.WindowsHandle("Principal");
+        //functions.WindowsHandle("Principal");
     }
 
     /**

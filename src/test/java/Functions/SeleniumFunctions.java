@@ -10,6 +10,7 @@ import org.json.simple.JSONObject;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -390,15 +391,22 @@ public class SeleniumFunctions {
      */
     public void AcceptAlert(String option){
         try {
+            Actions actions = new Actions(driver);
+
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_TIMEOUT));
-            Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+            Alert alert = driver.switchTo().alert();
+
             System.out.println(alert.getText());
-            if (option == "accept") {
+            if (option.equals("accept")) {
                 alert.accept();
+                //alert = (Alert) actions.keyDown(Keys.ENTER);
+                Thread.sleep(8000);
+                //actions.keyUp(Keys.ENTER);
+                System.out.println("The alert was accepted successfully");
             }else {
                 alert.dismiss();
             }
-            System.out.println("The alert was accepted successfully");
+
         }catch (Throwable e){
             log.error("Error came while waiting for the alert pop-up "+e.getMessage());
         }
@@ -451,7 +459,9 @@ public class SeleniumFunctions {
         ElementText = GetTextElement(element);
 
         boolean isFound = ElementText.indexOf(text) !=-1? true: false;
+
         Assert.assertTrue("Text is present in element: "+element+" current text is: "+ElementText, isFound);
+
     }
 
     /**
@@ -462,7 +472,7 @@ public class SeleniumFunctions {
      */
     public void checkTextElementIqualTo(String element, String text) throws Exception{
         ElementText = GetTextElement(element);
-
+        System.out.println("Text is present in element: "+element+" current text is: "+ElementText);
         Assert.assertEquals("Text is present in element: "+element+" current text is: "+ElementText, text, ElementText);
     }
 
@@ -500,6 +510,5 @@ public class SeleniumFunctions {
             System.out.println(information);
         }
     }
-
 
 }

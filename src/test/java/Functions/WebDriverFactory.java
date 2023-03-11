@@ -4,6 +4,8 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.phantomjs.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +42,16 @@ public class WebDriverFactory {
             }
             driver = new ChromeDriver();
         }
+        /************** Driver PhantomJS **************/
 
+        /*if ("PHANTOM".equalsIgnoreCase(browser)){
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setJavascriptEnabled(true);
+            if ("LINUX".equalsIgnoreCase(os)){
+                caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY, "src/test/java/Software/linux/phantomjs");
+            }
+            driver = new PhantomJSDriver(caps);
+        }*/
         /********** Driver no esta seleccionado ***********/
         else {
             log.error("El driver no esta seleccionado correctamente, nombre invalido: "+ browser +", "+os);

@@ -4,7 +4,7 @@ import StepDefinitions.Hooks;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverInfo;
-import org.openqa.selenium.support.decorators.WebDriverDecorator;
+//import org.openqa.selenium.support.decorators.WebDriverDecorator;
 
 import java.io.IOException;
 import java.io.InputStream;

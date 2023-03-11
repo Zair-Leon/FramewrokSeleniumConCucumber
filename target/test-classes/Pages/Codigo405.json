@@ -1,0 +1,147 @@
+{
+  "Usuario": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idLoginAdForm:idUsLoginTx']"
+  },
+  "Contraseña": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idLoginAdForm:idPassLoginSecret']"
+  },
+  "BotonLogin": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idLoginAdForm:j_id43']"
+  },
+  "ImagenMenuPrincipal": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//img[@id='idIndexAdForm:j_id162']"
+  },
+  "AdministracionServiciosRest": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"idIndexAdForm:idHeaderAdHtml:Menu:j_id49:j_id50:AdminServicesRest:AdministrationRest:link\"]"
+  },
+  "Titulo-AdministracionServiciosRest": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='form:j_id205']"
+  },
+  "ActivarEdicion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idIndexAdForm:idAddOptionsAdView:idLockAddOptAdLk']"
+  },
+  "ActivarEdicion-BotonAceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idIndexAdForm:idActEditionPopupAdBtn']"
+  },
+  "Crear": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id282']"
+  },
+  "NombreServicio": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:txtServiceName']"
+  },
+  "Version": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:txtServiceVersion']"
+  },
+  "Taxonomia": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:tabSet:0:GeneralConfigurationLeft:j_id341']"
+  },
+  "Taxonomia-ROOT": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='form:treeFragment:tree:n-root:j_id85']"
+  },
+  "Taxonomia-Aceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:treeFragment:btnOKPrincTax']"
+  },
+  "FechaProduccion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:productionDate']"
+  },
+  "Descripcion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//textarea[@id='form:tabSet:0:GeneralConfigurationLeft:txtServiceDescription']"
+  },
+  "EndPoint": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:txtServiceEndPoint']"
+  },
+  "UrlWADL": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:txtURL_WADL']"
+  },
+  "BotonAgregarRecurso": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:btnReloadOperation']"
+  },
+  "NombreRecurso": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:calendarTable:0:txtResource']"
+  },
+  "OpcionPOST": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:GeneralConfigurationLeft:calendarTable:0:j_id426']"
+  },
+  "BotonSiguiente": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:j_id727']"
+  },
+  "SeleccionarTodos": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:ContactResponsableFragment:j_id466']"
+  },
+  "SeleccionarTodosResp": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:tabSet:0:ContactResponsableFragment:btnAddAllResponsable']"
+  },
+  "BotonGuardar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:j_id729']"
+  },
+  "PopUpBoton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:btnOK']"
+  },
+  "TerminarEdicion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:idAddOptionsAdView:idUnlockAddOptAdLk']"
+  },
+  "TerminarEdicion-Lista": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//select[@id='form:idSelOptPopupAdMenu']"
+  },
+  "TerminarEdicion-BotonAceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:idSavePopupAdBtn']"
+  },
+
+
+
+  "LogsREST": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//*[@id=\"idIndexAdForm:idHeaderAdHtml:Menu:j_id49:j_id64:j_id67:j_id76:out\"]"
+  },
+  "UltimoLog": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//img[@id='idLogRsForm:idLogsAudRepRestTbl:0:j_id190']"
+  },
+  "VerDetalles": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idLogRsForm:j_id183']"
+  },
+  "MensajeError": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='idAudRepDetRestForm:idMainAudRepDetRestSet:0:idGenInfoAudRepDetRestTbl:12:idValueDetailInLbl']"
+  },
+
+
+
+
+  "Eliminar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id290']"
+  }
+
+}
+

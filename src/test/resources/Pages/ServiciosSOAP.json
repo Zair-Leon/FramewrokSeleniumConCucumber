@@ -1,0 +1,163 @@
+{
+  "Usuario": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idLoginAdForm:idUsLoginTx']"
+  },
+  "Contraseña": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idLoginAdForm:idPassLoginSecret']"
+  },
+  "BotonLogin": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idLoginAdForm:j_id43']"
+  },
+  "ImagenMenuPrincipal": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//img[@id='idIndexAdForm:j_id162']"
+  },
+  "Menu-AdministracionServiciosSoap": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idIndexAdForm:idHeaderAdHtml:Menu:j_id49:j_id50:AdminServices:Administration:link']"
+  },
+  "Titulo-AdministracionServiciosSoap": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='form:j_id204']"
+  },
+  "ActivarEdicion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idIndexAdForm:idAddOptionsAdView:idLockAddOptAdLk']"
+  },
+  "ActivarEdicion-BotonAceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idIndexAdForm:idActEditionPopupAdBtn']"
+  },
+  "Crear": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id281']"
+  },
+  "NombreServicio": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:idSerSoapNameTx']"
+  },
+  "Version": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:txtServiceVersion']"
+  },
+  "VersionSOAP": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//select[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:cmbSoapVersion']"
+  },
+  "Taxonomia": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:j_id335']"
+  },
+  "Taxonomia-ROOT": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='idSerSoapEdForm:treeFragment:tree:n-root:j_id86']"
+  },
+  "Taxonomia-SUBROOT": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='idSerSoapEdForm:treeFragment:tree:n-0:j_id86']"
+  },
+  "Taxonomia-Aceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:treeFragment:btnOKPrincTax']"
+  },
+  "FechaProduccion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:productionDate']"
+  },
+  "Descripcion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//textarea[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:txtServiceDescription']"
+  },
+  "EndPoint": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:txtServiceEndPoint']"
+  },
+  "UrlWSDL": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:txtServiceWsdl']"
+  },
+  "BotonVerOperaciones": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:btnShowOperation']"
+  },
+  "BotonVerOperaciones-NombreOperacion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:idSerSoapGenView:tableOperations:stOperationNameHeader']"
+  },
+  "BotonSiguiente": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:j_id686']"
+  },
+  "SeleccionarTodos": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:ContactResponsableFragment:j_id425']"
+  },
+  "SeleccionarTodosResp": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:idSerSoapEdTabSet:0:ContactResponsableFragment:btnAddAllResponsable']"
+  },
+  "BotonGuardar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:j_id688']"
+  },
+  "PopUpBoton": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='idSerSoapEdForm:btnOK']"
+  },
+  "TerminarEdicion": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:idAddOptionsAdView:idUnlockAddOptAdLk']"
+  },
+  "TerminarEdicion-Lista": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//select[@id='form:idSelOptPopupAdMenu']"
+  },
+  "TerminarEdicion-BotonAceptar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:idSavePopupAdBtn']"
+  },
+
+
+
+
+  "SeleccionarServicio": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//img[@id='form:resultsTable:0:j_id297']"
+  },
+  "VerDetalles": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id284']"
+  },
+  "VerDetalles-Titulo": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='form:ldblTitle']"
+  },
+  "BotonRegresar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//input[@id='form:btnBackSaveService']"
+  },
+
+
+
+
+  "Editar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id287']"
+  },
+  "Editar-Titulo": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//span[@id='idSerSoapEdForm:ldblTitle']"
+  },
+
+
+
+  "Eliminar": {
+    "GetFieldBy": "xpath",
+    "ValueToFind": "//a[@id='form:j_id290']"
+  }
+
+}
+
